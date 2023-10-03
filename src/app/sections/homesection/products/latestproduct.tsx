@@ -51,7 +51,7 @@ const LatestProducts = () => {
                     })}
             </div>
             <div className="!flex !justify-center !items-center ">
-                <Button type="primary" className="mt-[100px]">
+                <Button type="primary" className="mt-[100px] bg-[#fff] text-[#000] border-[1px solid #000]">
                     All Product
                 </Button>
             </div>
