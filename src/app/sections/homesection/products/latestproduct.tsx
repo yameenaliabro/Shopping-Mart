@@ -14,8 +14,8 @@ const LatestProducts = () => {
     return (
         <div>
             <div className="!flex !justify-center !items-center  !text-center !mt-[100px]">
-                <Title className="!flex !text-center !items-center font-semibold text-[30px] leading-normal">
-                    Latest Product
+                <Title className="!flex !text-center !items-center font-semibold text-[40px] leading-normal">
+                    LATEST PRODUCT
                 </Title>
             </div>
             <div className="flex justify-center gap-x-10 flex-wrap">
@@ -36,12 +36,19 @@ const LatestProducts = () => {
                                         />
                                     }
                                     actions={[
-                                        <SettingOutlined key="setting" />,
-                                        <ShoppingCartOutlined key="edit" />,
-                                        <EllipsisOutlined key="ellipsis" />,
+                                        <SettingOutlined key="setting" size={40} className="!w-[40px] ! h-full" />,
+                                        <ShoppingCartOutlined key="edit" size={40} className="w-[40px] h-full" />,
+                                        <EllipsisOutlined key="ellipsis" size={40} className="w-[40px] h-full" />,
                                     ]}
                                 >
-                                    <Meta title={item.title} description={item.description} />
+                                    <Meta
+                                        title={item.title}
+                                        description={item.description}
+                                        className="!leading-[25px]"
+                                    />
+                                    <p className="text-[20px] font-medium leading-[20px] !mt-[10px]">
+                                        Price ${item.price}
+                                    </p>
                                     <div className="mt-[10px]">
                                         <Rate defaultValue={item.rating} disabled />
                                     </div>
@@ -51,7 +58,7 @@ const LatestProducts = () => {
                     })}
             </div>
             <div className="!flex !justify-center !items-center ">
-                <Button type="primary" className="mt-[100px] bg-[#fff] text-[#000] border-[1px solid #000]">
+                <Button type="primary" className="mt-[100px]">
                     All Product
                 </Button>
             </div>

@@ -1,6 +1,7 @@
 import React from "react";
 import Carousels from "../sections/homesection/banner";
 import LatestProducts from "../sections/homesection/products/latestproduct";
+import Savings from "../sections/homesection/saving";
 
 function MainHome() {
     return (
@@ -8,6 +9,9 @@ function MainHome() {
             <Carousels />
             <div>
                 <LatestProducts />
+            </div>
+            <div className="mt-[100px] mb-[20px]">
+                <Savings />
             </div>
         </div>
     );
