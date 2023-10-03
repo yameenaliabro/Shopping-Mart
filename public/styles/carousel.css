@@ -1,0 +1,78 @@
+.banner-slide-1 {
+  background-image: url("../assets/images/1.jpg");
+  background-repeat: no-repeat;
+  background-size: 200%;
+}
+
+.banner-slide-2 {
+  background-image: url("../assets/images/first-carousel.jpg");
+  background-repeat: no-repeat;
+  background-size: 200%;
+}
+
+.banner-slide-3 {
+  background-image: url("../assets/images/third-carousel.jpg");
+  background-repeat: no-repeat;
+  background-size: 200%;
+}
+
+.banner-slide-4 {
+  background-image: url("../assets/images/five-carousel.jpg");
+  background-repeat: no-repeat;
+  background-size: 200%;
+}
+
+.banner-slide-5 {
+  background-image: url("../assets/images/four.jpg");
+  background-repeat: no-repeat;
+  background-size: 200%;
+}
+
+.banner {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 90px 0 70px;
+}
+
+.content {
+  color: white;
+  margin-bottom: 120px;
+}
+
+.food-title {
+  font-size: 40px;
+  line-height: 30px;
+  font-weight: 400;
+  margin-bottom: 22px;
+  letter-spacing: 0.3px;
+}
+
+.food-detail {
+  font-size: 15px;
+  line-height: 24px;
+  letter-spacing: 0.3px;
+  text-transform: capitalize;
+}
+
+.col-button button {
+  margin: 10px;
+  border: none;
+  border-radius: none !important;
+
+}
+
+.col-button button:hover {
+  color: #fff;
+}
+
+.contact-us {
+  color: #fff;
+  border: 1px solid #fb8a05 !important;
+}
+
+.contact-us:hover {
+  color: #ffffff !important;
+  background-color: #fb8a05;
+  transition: all 0.4s ease;
+}
