@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Provider from "./utlis/Provider";
 import ReactQueryClient from "./services/react-query-client";
+import { Fotter } from "./Components";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,6 +19,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <body className={inter.className}>
                 <ReactQueryClient>
                     <Provider>{children}</Provider>
+                    <Fotter />
                 </ReactQueryClient>
             </body>
         </html>

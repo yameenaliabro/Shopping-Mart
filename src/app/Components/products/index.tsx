@@ -1,35 +1,39 @@
 "use client";
 import { EllipsisOutlined, SettingOutlined, ShoppingCartOutlined } from "@ant-design/icons";
 import { UseGetProduct } from "@src/app/apis/product";
-import { Button, Card, Image, Rate, Typography } from "antd";
-import Link from "next/link";
+import useCart from "@src/app/hooks/useCart";
+import { productProps } from "@src/app/types";
+import { Card, Image, Rate, Typography } from "antd";
 import React from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const AddtoCart = () => {
-    toast.success("Product Added to Cart!", {
-        position: "top-right",
-        autoClose: 2000,
-    });
-};
-const LatestProducts = () => {
+const AllProducts = () => {
     const { data } = UseGetProduct();
+    const { dispatch, cart } = useCart();
+    const ProductAddtoCart = (product: productProps) => {
+        dispatch({ type: "ADD_TO_CART", payload: product });
+        toast.success("Product Add to Cart!", {
+            position: "top-right",
+            autoClose: 2000,
+        });
+        console.log("🚀 ~ file: index.tsx:22 ~ ProductAddtoCart ~  cart:", cart);
+    };
 
     const { Meta } = Card;
     const { Title } = Typography;
 
     return (
-        <div>
-            <ToastContainer key="toastContainer" />,
+        <div className="bg-gradient p-[30px] ">
+            <ToastContainer />
             <div className="!flex !justify-center !items-center  !text-center !mt-[100px]">
-                <Title className="!flex !text-center !items-center font-semibold text-[40px] leading-normal">
-                    LATEST PRODUCT
+                <Title className="!flex !text-center !items-center font-semibold text-[40px] leading-normal text-[#fff]">
+                    All Products
                 </Title>
             </div>
             <div className="flex justify-center gap-x-10 flex-wrap">
                 {data?.product.length &&
-                    data?.product.slice(0, 8).map((item) => {
+                    data?.product.map((item) => {
                         return (
                             <div key={item.id} className="mt-[100px]">
                                 <Card
@@ -38,9 +42,9 @@ const LatestProducts = () => {
                                     bordered={false}
                                     cover={
                                         <Image
-                                            alt="latest product"
+                                            alt="product"
                                             src={item.thumbnail}
-                                            className="w-[350px] h-[300px]"
+                                            className="w-[350px] h-[300px] text-[#000]"
                                         />
                                     }
                                     actions={[
@@ -49,7 +53,7 @@ const LatestProducts = () => {
                                             key="edit"
                                             size={40}
                                             className="w-[40px] h-full"
-                                            onClick={AddtoCart}
+                                            onClick={() => ProductAddtoCart(item)}
                                         />,
                                         <EllipsisOutlined key="ellipsis" size={40} className="w-[40px] h-full" />,
                                     ]}
@@ -71,15 +75,8 @@ const LatestProducts = () => {
                         );
                     })}
             </div>
-            <div className="!flex !justify-center !items-center ">
-                <Link href="/products">
-                    <Button type="primary" className="mt-[100px] w-[230px] ">
-                        All Product
-                    </Button>
-                </Link>
-            </div>
         </div>
     );
 };
 
-export default LatestProducts;
+export default AllProducts;

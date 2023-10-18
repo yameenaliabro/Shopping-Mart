@@ -1,24 +1,17 @@
-"use client";
 import { Button, Col, Image, Row } from "antd";
 import React from "react";
-const Savings = () => {
+
+const GiftForUs = () => {
     return (
         <div className="flex bg-[#7fd7eb] flex-row justify-center !gap-x-[20px] p-[30px] m-[30px] rounded-[20px]">
-            <div className="flex flex-row justify-center gap-x-[20px]">
-                <Image
-                    preview={false}
-                    alt="savigs image"
-                    className="h-full"
-                    src="https://beemai.com/images/saving-img.png"
-                />
-                <Col>
+            <div className="flex flex-row justify-around gap-x-[70px]">
+                <Col className="ml-[20px] mt-[20px]">
                     <div className="flex justify-end flex-col my-[70px] mx-[50px]">
-                        <h2 className="!text-[#fff] text-[30px] font-semibold">BEST SAVINGS ON NEW ARRIVALS</h2>
+                        <h2 className="!text-[#fff] text-[30px] font-semibold">GIFTS FOR YOUR LOVED ONES</h2>
                         <p className="text-[white] font-medium text-[20px] leading-[30px]">
-                            Qui ex dolore at repellat, quia neque doloribus omnis adipisci, ipsum eos odio <br />
-                            fugit ut eveniet blanditiis praesentium totam non nostrum dignissimos nihil
+                            We have put a lot of lucky bag products on the shelves and
                             <br />
-                            eius facere et eaque. Qui, animi obcaecati.
+                            provided them with corresponding gift box packaging
                         </p>
                     </div>
                     <Row className="!flex !gap-x-[10px] !my-[50px] mx-[53px]">
@@ -33,9 +26,15 @@ const Savings = () => {
                         </Button>
                     </Row>
                 </Col>
+                <Image
+                    preview={false}
+                    alt="savigs image"
+                    className="h-[600px]"
+                    src="https://beemai.com/images/gifts.png"
+                />
             </div>
         </div>
     );
 };
 
-export default Savings;
+export default GiftForUs;

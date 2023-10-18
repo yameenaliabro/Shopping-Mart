@@ -7,7 +7,7 @@ const queryclient = new QueryClient();
 
 function ReactQueryClient({ children }: { children: ReactNode }) {
     return (
-        <QueryClientProvider client={queryclient} contextSharing={true}>
+        <QueryClientProvider client={queryclient}>
             {children}
             <ReactQueryDevtools initialIsOpen={false} />
         </QueryClientProvider>

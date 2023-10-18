@@ -1,8 +1,8 @@
 {
     "token": {
-        "colorPrimary": "#f85606",
+        "colorPrimary": "#41B3A3",
         "colorLink": "#000",
-        "colorSuccess": "#F9862F",
+        "colorSuccess": "#85DCB",
         "fontSizeHeading2": 25,
         "fontSizeHeading1": 25,
         "borderRadius": 5,
@@ -17,5 +17,10 @@
             "colorLinkActive": "#000000"
         }
     },
-    "Size": "large"
+    "Size": "large",
+    "typography": {
+        "body": {
+            "color": "#FFFFFF"
+        }
+    }
 }

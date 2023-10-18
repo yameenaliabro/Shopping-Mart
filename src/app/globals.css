@@ -19,6 +19,11 @@ body {
   box-sizing: border-box;
 }
 
+body[data-aos-duration='4000'] [data-aos],
+[data-aos][data-aos][data-aos-duration='4000'] {
+  transition-duration: 4000ms;
+}
+  
 #_next {
   height: 100%;
   width: 100%;
@@ -43,4 +48,8 @@ header .ant-menu-root .ant-menu-item-selected {
 
 .ant-menu-item:hover {
   color: #efefefc4 !important;
+}
+
+.bg-gradient {
+  background: linear-gradient(#00B09B, #96C93D, #FAFFD1, #78FFD6);
 }
