@@ -1,4 +1,4 @@
-import { Col, Row, theme, Typography, Menu, Badge, Dropdown, Avatar, MenuProps, Space } from "antd";
+import { Col, theme, Typography, Menu, Badge, Dropdown, Avatar, MenuProps } from "antd";
 import { FaUser, FaSignOutAlt, FaSignInAlt } from "react-icons/fa";
 import { AiTwotoneSetting } from "react-icons/ai";
 import { RiShoppingCartFill } from "react-icons/ri";
@@ -37,11 +37,6 @@ const Header = () => {
     const { token } = theme.useToken();
     const { push } = useRouter();
     const { cart } = useCart();
-    console.log("🚀 ~ file: DashboardTopBar.tsx:28 ~ Header ~ cart:", cart.item);
-    // const cart = useSelector((state) => state.cart);
-    // const dispatch = useDispatch();
-    // const removeToken = useRemoveToken();
-    // const isLoggedIn = useIsLoggedIn();
     const signOutUser = () => {
         // removeToken();
         // dispatch(logoutUser());
@@ -58,9 +53,10 @@ const Header = () => {
                     style={{
                         backgroundColor: token.colorSuccess,
                         textAlign: "center",
+                        width: "100%",
                     }}
                 >
-                    <Link href="/">
+                    <Link href="/" className="w-full">
                         <Typography.Title level={3} style={{ marginTop: 10 }} className="text-[#FFF]">
                             Lounge Store
                         </Typography.Title>
@@ -85,18 +81,15 @@ const Header = () => {
                         count={cart.totalItems}
                         className="!w-[40px] text-[30px]"
                     >
-                        <span>
+                        <span onClick={() => push("/cart")} className="cursor-pointer">
                             <RiShoppingCartFill />
                         </span>
                     </Badge>
                     <Dropdown
-                        arrow
-                        placement="bottomRight"
-                        menu={isAuthenticated ? (loggedDropDownmenu as MenuProps) : (unloggedDropDownMenu as MenuProps)}
+                        menu={{ items: isAuthenticated ? loggedDropDownmenu : unloggedDropDownMenu }}
+                        placement="bottom"
                     >
-                        <Space>
-                            <Avatar src="https://www.pngarts.com/files/6/User-Avatar-in-Suit-PNG.png" />
-                        </Space>
+                        <Avatar src="https://www.pngarts.com/files/6/User-Avatar-in-Suit-PNG.png" />
                     </Dropdown>
                 </div>
             </div>
