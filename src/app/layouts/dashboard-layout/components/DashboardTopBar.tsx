@@ -18,21 +18,6 @@ const loggedInHeaderMenu = [
 ];
 
 const Header = () => {
-    const loggedDropDownmenu: MenuProps["items"] = useMemo(
-        () => [
-            { label: "Signout", key: "signout", icon: <FaSignOutAlt /> },
-            { label: "Signout", key: "signout", icon: <FaSignOutAlt /> },
-        ],
-        []
-    );
-    const unloggedDropDownMenu: MenuProps["items"] = useMemo(
-        () => [
-            { label: "Signin", key: "signin", icon: <FaSignInAlt /> },
-            { label: "Profile", key: "profile", icon: <FaUser /> },
-            { label: "Setting", key: "setting", icon: <AiTwotoneSetting /> },
-        ],
-        []
-    );
     const { isAuthenticated } = useAuth();
     const { token } = theme.useToken();
     const { push } = useRouter();
@@ -46,6 +31,21 @@ const Header = () => {
         if (key !== "signout") return push(`/${key}`);
         signOutUser();
     };
+    const loggedDropDownmenu: MenuProps["items"] = useMemo(
+        () => [
+            { label: "Signout", key: "signout", icon: <FaSignOutAlt /> },
+            { label: "Signout", key: "signout", icon: <FaSignOutAlt /> },
+        ],
+        []
+    );
+    const unloggedDropDownMenu: MenuProps["items"] = useMemo(
+        () => [
+            { label: "Signin", key: "signin", icon: <FaSignInAlt />, onClick: () => push("/auth/signin") },
+            { label: "Profile", key: "profile", icon: <FaUser /> },
+            { label: "Setting", key: "setting", icon: <AiTwotoneSetting /> },
+        ],
+        [push]
+    );
     return (
         <header style={{ background: token.colorPrimary }}>
             <div className="flex flex-row justify-around">

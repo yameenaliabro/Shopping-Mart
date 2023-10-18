@@ -4,7 +4,7 @@ import React from "react";
 
 function Fotter() {
     return (
-        <div className="flex justify-around mt-[100px] p-[50px] bg-[#f85606] p">
+        <div className="flex justify-around  p-[50px] bg-[#f85606] p">
             <Col className="flex flex-col cursor-pointer">
                 <Typography.Title level={3} className="text-[#FFF]">
                     ContactUs

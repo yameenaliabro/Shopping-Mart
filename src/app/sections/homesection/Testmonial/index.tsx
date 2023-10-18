@@ -45,7 +45,7 @@ const Testimonials: React.FC = () => {
     ];
 
     return (
-        <div className=" justify-around mx-auto p-4 flex flex-col pt-[30px]">
+        <div className=" justify-around mx-auto p-4 flex flex-col pt-[30px] mb-[50px]">
             <h2 className="text-3xl font-semibold mb-4 text-center">Testimonials</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {testimonials.map((testimonial, index) => {
