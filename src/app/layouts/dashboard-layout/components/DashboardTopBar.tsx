@@ -1,11 +1,11 @@
-import { Col, Row, theme, Typography, Menu, Badge, Dropdown, Avatar, MenuProps } from "antd";
+import { Col, Row, theme, Typography, Menu, Badge, Dropdown, Avatar, MenuProps, Space } from "antd";
 import { FaUser, FaSignOutAlt, FaSignInAlt } from "react-icons/fa";
 import { AiTwotoneSetting } from "react-icons/ai";
+import { RiShoppingCartFill } from "react-icons/ri";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import useAuth from "@src/app/hooks/useAuth";
 import useCart from "@src/app/hooks/useCart";
-import { ShoppingCartOutlined } from "@ant-design/icons";
 import { useMemo } from "react";
 
 const loggedOutHeaderMenu = [
@@ -53,11 +53,8 @@ const Header = () => {
     };
     return (
         <header style={{ background: token.colorPrimary }}>
-            {/* <Container> */}
-            <Row justify="center" align="middle">
-                <Col
-                    xs={12}
-                    lg={6}
+            <div className="flex flex-row justify-around">
+                <div
                     style={{
                         backgroundColor: token.colorSuccess,
                         textAlign: "center",
@@ -68,7 +65,7 @@ const Header = () => {
                             Lounge Store
                         </Typography.Title>
                     </Link>
-                </Col>
+                </div>
                 <Col xs={11} lg={17}>
                     <Menu
                         mode="horizontal"
@@ -81,25 +78,28 @@ const Header = () => {
                         }}
                     />
                 </Col>
-                <Col xs={10} lg={1}>
+                <div className="flex flex-row  flex-4  items-center gap-x-[40px]">
                     <Badge
                         color={token.colorSuccess}
                         style={{ borderColor: token.colorSuccess }}
                         count={cart.totalItems}
+                        className="!w-[40px] text-[30px]"
                     >
-                        <ShoppingCartOutlined style={{ color: token.colorSuccess }} size={100} />
+                        <span>
+                            <RiShoppingCartFill />
+                        </span>
                     </Badge>
-                </Col>
-                <Dropdown
-                    arrow
-                    placement="bottomRight"
-                    menu={isAuthenticated ? (loggedDropDownmenu as MenuProps) : (unloggedDropDownMenu as MenuProps)}
-                >
-                    <Avatar src="https://www.pngarts.com/files/6/User-Avatar-in-Suit-PNG.png" />
-                </Dropdown>
-            </Row>
-
-            {/* </Container> */}
+                    <Dropdown
+                        arrow
+                        placement="bottomRight"
+                        menu={isAuthenticated ? (loggedDropDownmenu as MenuProps) : (unloggedDropDownMenu as MenuProps)}
+                    >
+                        <Space>
+                            <Avatar src="https://www.pngarts.com/files/6/User-Avatar-in-Suit-PNG.png" />
+                        </Space>
+                    </Dropdown>
+                </div>
+            </div>
         </header>
     );
 };
