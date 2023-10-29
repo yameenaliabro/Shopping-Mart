@@ -1,7 +1,8 @@
+import Signin from "@src/app/sections/authsection/signup";
 import React from "react";
 
 function SignupPage() {
-    return <div>SignupPage</div>;
+    return <Signin />;
 }
 
 export default SignupPage;

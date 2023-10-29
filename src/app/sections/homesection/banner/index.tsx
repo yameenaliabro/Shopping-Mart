@@ -1,7 +1,7 @@
 "use client";
 import { useRouter } from "next/navigation";
 import { Button, Carousel, Col, Row } from "antd";
-import Container from "@src/app/Components/Base/Container";
+import Container from "@src/app/Components/Base/common/Container";
 import { Heading } from "@src/app/Components";
 
 const Banner = () => {

@@ -1,13 +1,17 @@
+"use client";
+import InnerPageBanner from "@src/app/Components/Base/common/InnerPageBanner";
+import SignUpForm from "@src/app/Components/auth/signupForm";
 import React from "react";
 
-function Signin() {
+function Signup() {
     return (
-        <div className="bg-[url('https://mdbootstrap.com/img/Photos/Others/images/91.jpg')] w-full h-full">
-            <div className="flex">
-                <div></div>
+        <>
+            <InnerPageBanner title="Sign Up" />
+            <div className="flex flex-row justify-center ">
+                <SignUpForm />
             </div>
-        </div>
+        </>
     );
 }
 
-export default Signin;
+export default Signup;
