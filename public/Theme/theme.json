@@ -1,8 +1,8 @@
 {
     "token": {
-        "colorPrimary": "#41B3A3",
-        "colorLink": "#000",
-        "colorSuccess": "#85DCB",
+        "colorPrimary": "green",
+        "colorLink": "white",
+        "colorSuccess": "green",
         "fontSizeHeading2": 25,
         "fontSizeHeading1": 25,
         "borderRadius": 5,
