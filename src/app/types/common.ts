@@ -33,6 +33,8 @@ export type CartState = {
 export type CartAction =
     | { type: "ADD_TO_CART"; payload: CartItem & { price: number } }
     | { type: "REMOVE_CART"; payload: CartItem & { price: number } }
+    | { type: "INCREMENT_QUNATITY"; payload: CartItem & { price: number } }
+    | { type: "DECREMENTQUANTITY"; payload: CartItem & { price: number } }
     | { type: "CLEAR_CART" };
 
 export type CartContextProp = {

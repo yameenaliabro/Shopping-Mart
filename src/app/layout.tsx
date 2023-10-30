@@ -1,6 +1,7 @@
 import "./globals.css";
 import "../../public/styles/auth.scss";
 import "../../public/styles/carousel.css";
+import "../../public/styles/text.scss";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Provider from "./utlis/Provider";
